@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaEntidades\Cliente.cs" />
     <Compile Include="CapaEntidades\Producto.cs" />
     <Compile Include="CapaEntidades\Validaciones.cs" />
     <Compile Include="CapaPresentacion\Form1.cs">

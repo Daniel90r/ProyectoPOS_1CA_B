@@ -53,8 +53,17 @@ namespace ProyectoPOS_1CA_B.CapaPresentacion
                     Estado = true
                 });
             }
-            //metodo para refrescar 
+            //mandod a llmar el metodo para refrescar 
             RefrescarListaProductos();
+            DeshabilitarBotones();
+        }
+        //metodo para deshabilitar los botones de editar y eliminar
+        private void DeshabilitarBotones()
+        {
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
         }
         //metodo para refrescar la lista de productos en el datagridview
         private void RefrescarListaProductos()
@@ -124,6 +133,17 @@ namespace ProyectoPOS_1CA_B.CapaPresentacion
             txtStock.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
             chkEstado.Checked =
                 Convert.ToBoolean(dgvProductos.CurrentRow.Cells[5].Value);
+
+            //Habilitar botones
+            HabilitarBotones();
+        }
+        //metodo para habilitar los botones de editar y eliminar
+        private void HabilitarBotones()
+        {
+            btnNuevo.Enabled = false;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnLimpiar.Enabled = true;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -154,6 +174,7 @@ namespace ProyectoPOS_1CA_B.CapaPresentacion
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefrescarListaProductos();
                 LimpiarCampos();
+                DeshabilitarBotones();
             }
         }
         //Evento para editar un producto
@@ -200,6 +221,7 @@ namespace ProyectoPOS_1CA_B.CapaPresentacion
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefrescarListaProductos();
             LimpiarCampos();
+            DeshabilitarBotones();
         }
     }
 }
