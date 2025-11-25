@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPOS_1CA_B.CapaPresentacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace ProyectoPOS_1CA_B
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenuPrincipal());
+            //Application.Run(new FrmMenuPrincipal());
+            Application.Run(new FrmCliente());
         }
     }
 }
